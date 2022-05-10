@@ -26,5 +26,6 @@ Private Keys
 (8) 0xbef338fab826681995417d1d895cfe8819423e40c0fade27852e63ece30d8150
 (9) 0xd33bc2c3c3b2b07663da584c7fe8af2b6ee211f80293071db297717f79b3fb17
 
+deployment: truffle migrate --reset --compile-all --network development
 
 curl http://127.0.0.1:8545 -X POST -H "Content-Type: application/json" -d '{"jsonrpc": "2.0", "method": "web3_clientVersion"}'

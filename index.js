@@ -16,7 +16,7 @@ var callStoreOnLocalGanache = async function () {
   myContract.methods.store(num)
     .send({ from: web3.eth.defaultAccount })
     .then(function (recippt) {
-      console.log("recippt:",JSON.stringify(recippt,null,4))
+      console.log("recippt:", JSON.stringify(recippt, null, 4))
     }).
     catch(error => {
       console.log(error)
@@ -39,7 +39,7 @@ var callRetrieveOnLocalGanache = async function () {
   myContract.methods.retrieve()
     .send({ from: web3.eth.defaultAccount })
     .then(function (recippt) {
-      console.log("recippt:",JSON.stringify(recippt,null,4))
+      console.log("recippt:", JSON.stringify(recippt, null, 4))
     }).
     catch(error => {
       console.log(error)
@@ -78,5 +78,9 @@ let abi = [
   }
 ];
 
-callStoreOnLocalGanache();
-callRetrieveOnLocalGanache();
+callStoreOnLocalGanache().then(() => {
+  callRetrieveOnLocalGanache();
+})
+  .catch(msg => {
+    console.log(msg);
+  });
