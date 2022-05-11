@@ -9,6 +9,7 @@ pragma solidity >=0.7.0 <0.9.0;
  */
 contract Document {
     string content;
+    string documentIpfsCid;
 
     /**
      * @dev Store value in variable
@@ -25,6 +26,23 @@ contract Document {
     function getContent() public view returns (string memory) {
         return content;
     }
+
+    /**
+     * @dev Store value in variable documentIpfsCid
+     * @param newwords value to store
+     */
+    function setIpfsCid(string memory newwords) public {
+        documentIpfsCid = newwords;
+    }
+
+    /**
+     * @dev Return value
+     * @return value of 'documentIpfsCid'
+     */
+    function getIpfsCid() public view returns (string memory) {
+        return documentIpfsCid;
+    }
+
 
     /**
      * @dev verify encryted data

@@ -2,7 +2,7 @@
   "name": "my-first-truffle-project",
   "version": "0.0.1",
   "scripts": {
-    "ganache": "ganache-cli -h 0.0.0.0 --port 8545 --allowUnlimitedContractSize --gasLimit 6500000000 --gasPrice 6500000 --mnemonic \"exhibit critic recipe sea exist album box actual peasant blanket priority shield\""
+    "ganache": "ganache-cli -h 0.0.0.0 --port 8545 --gasLimit 6500000000 --gasPrice 6500000 --mnemonic \"exhibit critic recipe sea exist album box actual peasant blanket priority shield\""
   },
   "devDependencies": {
     "truffle": "^5.1.67"
