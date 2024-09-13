@@ -9,6 +9,10 @@
     "truffle": "^5.1.67"
   },
   "dependencies": {
+    "bs32": "^0.1.7",
+    "bs58": "^6.0.0",
+    "cids": "^1.1.9",
+    "my-first-truffle-project": "file:",
     "truffle-hdwallet-provider": "^1.0.17",
     "web3": "^1.7.3"
   }

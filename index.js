@@ -3,7 +3,7 @@ var Web3 = require('web3');
 
 var callStoreOnLocalGanache = async function () {
   // let web3 = new Web3("http://localhost:8545");
-  var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545/'));
+  var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545/'));
   const accounts = await web3.eth.getAccounts();
   web3.eth.defaultAccount = accounts[0];
   console.log(web3.eth.defaultAccount);
@@ -26,7 +26,7 @@ var callStoreOnLocalGanache = async function () {
 
 var callRetrieveOnLocalGanache = async function () {
   // let web3 = new Web3("http://localhost:8545");
-  var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545/'));
+  var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545/'));
   const accounts = await web3.eth.getAccounts();
   web3.eth.defaultAccount = accounts[0];
   console.log(web3.eth.defaultAccount);
@@ -47,35 +47,34 @@ var callRetrieveOnLocalGanache = async function () {
     )
 }
 
-let contractAddr = '0xd4865bEA7D9608Bc35789Cb8F0445408A857DE22';
+let contractAddr = '0xDD216423D12802E501f717966d94BD7CcCd5021d';
 let abi = [
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "num",
-        "type": "uint256"
-      }
-    ],
-    "name": "store",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "retrieve",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  }
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "num",
+				"type": "uint256"
+			}
+		],
+		"name": "store",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "retrieve",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
 ];
 
 callStoreOnLocalGanache().then(() => {
@@ -84,7 +83,7 @@ callStoreOnLocalGanache().then(() => {
       callRetrieveOnLocalGanache();
 
     // }
-}, 500);
+}, 1500);
 })
   .catch(msg => {
     console.log(msg);
